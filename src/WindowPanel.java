@@ -6,18 +6,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class WindowPanel extends JPanel {
-    private MainBoard mainSquare;
+    private final MainBoard mainSquare;
     private BufferedImage backgroundImage;
 
     public WindowPanel(MainBoard mainSquare) {
         this.mainSquare = mainSquare;
 
-        // Wczytaj tło z pliku (zmień ścieżkę do odpowiedniego pliku)
+
         try {
             backgroundImage = ImageIO.read(new File("images/background.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException ignored) {}
     }
 
     @Override
@@ -25,7 +23,7 @@ public class WindowPanel extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        // Rysowanie tła
+
         if (backgroundImage != null) {
             g2.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }

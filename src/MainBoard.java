@@ -2,9 +2,9 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class MainBoard {
-    private int x;
-    private int y;
-    private int size;
+    private final int x;
+    private final int y;
+    private final int size;
     int num_of_squares = 5;
 
     public MainBoard(int x, int y, int size) {
